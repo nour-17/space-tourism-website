@@ -11,14 +11,17 @@
   --ff-main: "Barlow Condensed", sans-serif;
   --ff-secondary: "Bellefair", serif;
   /* font size */
-  --fs-900: 9.375rem;
-  --fs-800: 6.25rem;
-  --fs-700: 3.5rem;
-  --fs-600: 2rem;
-  --fs-500: 1.75rem;
-  --fs-400: 1.125rem;
-  --fs-300: 1rem;
-  --fs-200: 0.875rem;
+  --fs-8: 9.375rem;
+  --fs-7: 6.25rem;
+  --fs-6: 3.5rem;
+  --fs-5: 2rem;
+  --fs-4: 1.75rem;
+  --fs-3: 1.125rem;
+  --fs-2: 1rem;
+  --fs-1: 0.875rem;
+  /* font weight */
+  --fw-regular: 400;
+  --fw-bold:700;
 }
 
 /* ---------------------- */
@@ -59,6 +62,11 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
+  font-family: var(--ff-main);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-regular);
+  color: hsl(var(--clr-light));
+  background-color: hsl(var(--clr-dark-blue));
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -100,6 +108,16 @@ select {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
 /* ---------------------- */
 /* utility classes        */
 /* ---------------------- */
@@ -129,12 +147,42 @@ select {
   white-space: nowrap; /* added line */
   border: 0;
 }
-.bg-dark-blue {
-  background-color: hsl(var(--clr-dark-blue));
-}
-.bg-light-blue {
-  background-color: hsl(var(--clr-light-blue));
-}
-.bg-light {
-  background: hsl(var(--clr-light));
+/* colors */
+.bg-dark-blue {background-color: hsl(var(--clr-dark-blue));}
+.bg-light-blue {background-color: hsl(var(--clr-light-blue));}
+.bg-light {background: hsl(var(--clr-light));}
+
+.text-dark{color: hsl(var(--clr-dark-blue));}
+.text-accent{color: hsl(var(--clr-light-blue));}
+.text-light{color: hsl(var(--clr-light));}
+
+/* typography */
+
+
+.ff-main { font-family: var(--ff-main); } 
+.ff-secondary { font-family: var(--ff-secondary); } 
+
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.uppercase { text-transform: uppercase; }
+
+.fs-8 { font-size: var(--fs-8);}
+.fs-7 { font-size: var(--fs-7); }
+.fs-6 { font-size: var(--fs-6); }
+.fs-5 { font-size: var(--fs-5); }
+.fs-4 { font-size: var(--fs-4); }
+.fs-3 { font-size: var(--fs-3); }
+.fs-2 { font-size: var(--fs-2); }
+.fs-1 { font-size: var(--fs-1); }
+
+.fw-regular{ font-weight: var(--fw-regular);}
+.fw-bold{ font-weight: var(--fw-bold);}
+
+.fs-8,
+.fs-7,
+.fs-6,
+.fs-5 {
+    line-height: 1.1;
 }
