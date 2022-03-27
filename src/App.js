@@ -7,7 +7,7 @@ const App = () => {
                 <h1 className="uppercase">Design system</h1>
 
                 <section id="colors" style={{ margin: "4rem 0" }}>
-                    <h2 className="uppercase"><span>01</span> colors</h2>
+                    <h2 className="uppercase numbered-title"><span>01</span> colors</h2>
                     <div className="flex">
                         <div style={{ flexGrow: "1" }}>
                             <div className="bg-dark-blue text-light ff-regular fs-4" style={{ padding: "3rem 1rem 1rem", border: "1px solid white" }}>#0B0D17</div>
@@ -28,7 +28,7 @@ const App = () => {
                 </section>
 
                 <section id="typography" style={{ margin: "4rem 0" }}>
-                    <h2><span>02 </span>Typography</h2>
+                    <h2 className="numbered-title uppercase"><span>02 </span>Typography</h2>
                     <div class="flex">
                         <div style={{ flexBasis: "100%" }}>
                             <div>
@@ -37,19 +37,19 @@ const App = () => {
                             </div>
                             <div>
                                 <p>Heading 2 - Bellefair Regular - 100px</p>
-                                <p>Venus</p>
+                                <p className='fs-7 uppercase fw-regular ff-secondary' >Venus</p>
                             </div>
                             <div>
                                 <p>Heading 3 - Bellefair Regular - 56px</p>
-                                <p>Jupiter & Saturn</p>
+                                <p className='fs-6 uppercase fw-regular ff-secondary'>Jupiter & Saturn</p>
                             </div>
                             <div>
                                 <p>Heading 4 - Bellefair Regular - 32px</p>
-                                <p>Uranus, Neptune, & Pluto</p>
+                                <p className='fs-5 uppercase fw-regular ff-secondary'>Uranus, Neptune, & Pluto</p>
                             </div>
                             <div>
                                 <p>Heading 5 - Barlow Condensed Regular - 28px - 4.75 Character Space</p>
-                                <p>So, you want to travel to space</p>
+                                <p className='fs-4 uppercase fw-regular ff-main' style={{ letterSpacing: "4.75px" }}>So, you want to travel to space</p>
                             </div>
 
                         </div>
@@ -69,15 +69,37 @@ const App = () => {
                             </div>
                             <div>
                                 <p>Body Text</p>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. </p>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec
+                                    urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet
+                                    viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse
+                                    potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque
+                                    aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula
+                                    sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis.
+                                    Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
+                                    hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </section>
+                <section id="interactive-elements">
+                    <h2 class="numbered-title uppercase"><span>03</span> Interactive elements</h2>
 
+                    <div></div>
 
-            </div>
-        </div>
+                    <div class="flex">
+                        <div>
+                            <a href='#' className='main-btn uppercase fs-5 fw-regular text-dark bg-white ff-secondary'>explore</a>
+                        </div>
+
+                        <div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div >
+        </div >
     )
 }
 export default App
