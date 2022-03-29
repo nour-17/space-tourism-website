@@ -29,7 +29,7 @@ const App = () => {
 
                 <section id="typography" style={{ margin: "4rem 0" }}>
                     <h2 className="numbered-title uppercase"><span>02 </span>Typography</h2>
-                    <div class="flex">
+                    <div className="flex">
                         <div style={{ flexBasis: "100%" }}>
                             <div>
                                 <p>Heading 1 - Bellefair Regular - 150px</p>
@@ -83,21 +83,41 @@ const App = () => {
                     </div>
                 </section>
                 <section id="interactive-elements">
-                    <h2 class="numbered-title uppercase"><span>03</span> Interactive elements</h2>
-
-                    <div></div>
-
-                    <div class="flex">
+                    <h2 className="numbered-title uppercase"><span>03</span> Interactive elements</h2>
+                    <div>
+                        <nav>
+                            <ul className='main-nav flex underline' style={{"--gap":"4em", listStyle:"none", padding:"0",backgroundColor:"hsl(var(--clr-light)/ 0.2)"}}>
+                                <li className='active letter-spacing-2 fs-3 uppercase text-white '><span>01</span> active</li>
+                                <li className='letter-spacing-2 fs-3 uppercase text-white '><span>02</span> hovered</li>
+                                <li className='letter-spacing-2 fs-3 uppercase text-white '><span>03</span> idle</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div className="flex">
                         <div>
                             <a href='#' className='main-btn uppercase fs-5 fw-regular text-dark bg-white ff-secondary'>explore</a>
                         </div>
-
-                        <div>
+                        <div className='flow' style={{marginBottom:"50vh"}}>
+                            <div className="tabs-btns underline flex">
+                                <button aria-selected="true" className='uppercase text-accent bg-dark-blue ff-main letter-spacing-2'>Moon</button>
+                                <button aria-selected="false" className='uppercase text-accent bg-dark-blue ff-main letter-spacing-2'>Mars</button>
+                                <button aria-selected="false" className='uppercase text-accent bg-dark-blue ff-main letter-spacing-2'>Europa</button>
+                            </div>
+                            {/* dots */}
+                            <div className="dot-indicators underline flex">
+                                <button aria-selected="true" ><span className='sr-only'>slide title</span></button>
+                                <button aria-selected="false" ><span className='sr-only'>slide title</span></button>
+                                <button aria-selected="false" ><span className='sr-only'>slide title</span></button>
+                            </div>
+                            {/* numbers */}
+                            <div class="num-indicators ff-secondary grid" style={{width:"45px"}}>
+                                <button aria-selected="true"><span>1</span></button>
+                                <button aria-selected="false"><span>2</span></button>
+                                <button aria-selected="false"><span>3</span></button>
+                            </div>
                         </div>
                     </div>
-
                 </section>
-
             </div >
         </div >
     )
