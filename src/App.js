@@ -1,6 +1,7 @@
 import React from 'react';
 
 const App = () => {
+    fetch("./data.json").then(res=>res.json()).then(data=>console.log(data))
     return (
         <div className='App'>
             <div className="container">
@@ -110,7 +111,7 @@ const App = () => {
                                 <button aria-selected="false" ><span className='sr-only'>slide title</span></button>
                             </div>
                             {/* numbers */}
-                            <div class="num-indicators ff-secondary grid" style={{width:"45px"}}>
+                            <div className="num-indicators ff-secondary grid" style={{width:"45px"}}>
                                 <button aria-selected="true"><span>1</span></button>
                                 <button aria-selected="false"><span>2</span></button>
                                 <button aria-selected="false"><span>3</span></button>
