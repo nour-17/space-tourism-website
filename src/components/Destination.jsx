@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Destination(props) {
   return (
-    <div>
+    <div className="destination">
       <div>
         <h2></h2>
         <img src={props.img} alt="" />
