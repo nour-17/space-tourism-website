@@ -74,6 +74,9 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
 }
 
 /* A elements that don't have a class get default styles */
@@ -341,9 +344,7 @@ ul > a{
 .app{
   min-height: 100vh;
   
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover  ;
+  
   
 }
 
@@ -410,11 +411,6 @@ ul > a{
   }
 }
 
-body {
-  background-size: cover;
-  background-position: bottom center;
-  background-repeat: no-repeat;
-}
 .app {
   background-image: url(./images/home/background-home-mobile.jpg);
 }

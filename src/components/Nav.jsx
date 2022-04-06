@@ -8,8 +8,14 @@ export default function Nav(props) {
         <img src={navLogo} alt="nav logo" />
       </div>
       <div className="nav-line"></div>
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+        <span class="sr-only" aria-expanded="false">
+          Menu
+        </span>
+      </button>
+
       <ul className="main-nav underline flex uppercase">
-        <Link style={{ textDecoration: "none", color: "white" }} to="/home">
+        <Link style={{ textDecoration: "none", color: "white" }} to="/">
           <li>
             <span>00</span> home
           </li>
