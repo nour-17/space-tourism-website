@@ -2,15 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import navLogo from "../images/shared/logo.svg";
 export default function Nav() {
-  const openNav = _ => {
-    document.getElementsByClassName("main-nav")[0].classList.toggle("open-nav");
-    document
-      .getElementsByClassName("mobile-nav-toggle")[0]
-      .classList.toggle("btnBg");
-  };
-  const closeNav = _ => {
-    document.getElementsByClassName("main-nav")[0].classList.remove("open-nav");
-  };
+  const nav = document.getElementsByClassName("main-nav");
+  const navBtn = document.getElementsByClassName("nav-toggle");
+
+  function toggleNav() {
+    nav[0].classList.toggle("nav-open");
+    navBtn[0].classList.toggle("nav-open");
+  }
   return (
     <nav
       className="primary-nav flex"
@@ -19,34 +17,31 @@ export default function Nav() {
       <div className="nav-logo">
         <img src={navLogo} alt="nav logo" />
       </div>
-      {/* <div className="nav-line"></div> */}
       <button
-        className="mobile-nav-toggle"
-        onClick={openNav}
-        aria-controls="primary-navigation"
+        className="nav-toggle"
+        aria-label="toggle navigation"
+        onClick={toggleNav}
       >
-        <span className="sr-only" aria-expanded="false">
-          Menu
-        </span>
+        <span className="hamburger"></span>
       </button>
 
       <ul className="main-nav underline flex uppercase">
-        <Link onClick={closeNav} className="active" to="/">
+        <Link onClick={toggleNav} className="active nav__link" to="/">
           <li>
             <span>00</span> home
           </li>
         </Link>
-        <Link onClick={closeNav} to="/destination">
+        <Link onClick={toggleNav} className="nav__link" to="/destination">
           <li>
             <span>01</span> destination
           </li>
         </Link>
-        <Link onClick={closeNav} to="/crew">
+        <Link onClick={toggleNav} className="nav__link" to="/crew">
           <li>
             <span>02</span> crew
           </li>
         </Link>
-        <Link onClick={closeNav} to="/technology">
+        <Link onClick={toggleNav} className="nav__link" to="/technology">
           <li>
             <span>03</span> technology
           </li>

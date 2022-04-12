@@ -9,7 +9,7 @@ import Home from "./components/Home";
 import Nav from "./components/Nav";
 
 const App = () => {
-  const changeBackground = name => {};
+  const destinationContent = React.useState("moon");
   fetch("./data.json")
     .then(res => res.json())
     .then(data => console.log(data));

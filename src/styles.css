@@ -382,11 +382,67 @@ ul > a{
   align-self: center;
   
 }
-.open-nav{
-  transform: translateX(0%);
+.nav-open {
+  transform: translateX(0);
+}
+.nav-open .hamburger {
+  transform: rotate(45deg);
+}
+.nav-open .hamburger::after {
+  transform: rotate(-45deg) translateY(5px) translateX(-4px);
+  display: none;
+}
+.nav-open .hamburger::before {
+  transform: rotate(90deg) translateX(-6px);
+}
+.hamburger,.nav-toggle {
+  display: none;
 
 }
 @media (max-width:40rem){
+  .hamburger {
+    display: block;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    transition: transform 250ms ease-in-out;
+
+    
+  }
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    border-radius: 1em;
+    height: 3px;
+    width: 2em;
+    background: rgb(255, 255, 255);
+  }
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  .hamburger::before {
+    top: 6px;
+    
+  }
+  .hamburger::after {
+    transition: transform 250ms ease-in-out;
+    bottom: 6px;
+  }
+  .nav-toggle {
+    display: block;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0.5em;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 5000;
+    
+  }
   nav > ul{
     flex-direction: column;
     position: fixed;
