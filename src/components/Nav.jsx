@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import navLogo from "../images/shared/logo.svg";
-export default function Nav() {
+export default function Nav(props) {
   const nav = document.getElementsByClassName("main-nav");
   const navBtn = document.getElementsByClassName("nav-toggle");
 
@@ -26,22 +26,50 @@ export default function Nav() {
       </button>
 
       <ul className="main-nav underline flex uppercase">
-        <Link onClick={toggleNav} className="active nav__link" to="/">
+        <Link
+          onClick={() => {
+            toggleNav();
+            props.handleBackground("home");
+          }}
+          className="active nav__link"
+          to="/"
+        >
           <li>
             <span>00</span> home
           </li>
         </Link>
-        <Link onClick={toggleNav} className="nav__link" to="/destination">
+        <Link
+          onClick={() => {
+            toggleNav();
+            props.handleBackground("destination");
+          }}
+          className="nav__link"
+          to="/destination"
+        >
           <li>
             <span>01</span> destination
           </li>
         </Link>
-        <Link onClick={toggleNav} className="nav__link" to="/crew">
+        <Link
+          onClick={() => {
+            toggleNav();
+            props.handleBackground("crew");
+          }}
+          className="nav__link"
+          to="/crew"
+        >
           <li>
             <span>02</span> crew
           </li>
         </Link>
-        <Link onClick={toggleNav} className="nav__link" to="/technology">
+        <Link
+          onClick={() => {
+            toggleNav();
+            props.handleBackground("technology");
+          }}
+          className="nav__link"
+          to="/technology"
+        >
           <li>
             <span>03</span> technology
           </li>
