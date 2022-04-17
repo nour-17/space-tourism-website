@@ -1,14 +1,27 @@
 import React from "react";
 
 export default function Destination({ props, destinationState }) {
-  console.log(props);
   const { name, images, description, distance, travel } = props;
-
+  const [baseImg, setBaseImg] = React.useState("./");
+  React.useEffect(() => {
+    images && setBaseImg(images.png);
+  }, [images]);
   return (
     <div className="destination">
       <div>
-        <h2>pick your destination</h2>
-        <img src={"./"} alt="planet photo" />
+        <h2 className="uppercase">
+          <span
+            className=""
+            style={{
+              color: "hsl(var(--clr-white) / 0.25)",
+              marginRight: ".5em",
+            }}
+          >
+            01
+          </span>{" "}
+          pick your destination
+        </h2>
+        <img src={baseImg} alt="planet photo" />
       </div>
       <div>
         <div className="tabs-btns underline flex">
@@ -49,18 +62,24 @@ export default function Destination({ props, destinationState }) {
             titan
           </button>
         </div>
-        <h1>{name}</h1>
-        <p>{description}</p>
-        <div>
-          <div>
-            <p>avg Distance</p>
-            <h4>{distance}</h4>
+        <article>
+          <h1 className="fs-7 ff-secondary uppercase">{name}</h1>
+          <p>{description}</p>
+          <div className="flex destination-last-section">
+            <div>
+              <h4 className="uppercase ff-secondary letter-spacing-1">
+                avg Distance
+              </h4>
+              <h4 className="fs-6 ff-secondary uppercase">{distance}</h4>
+            </div>
+            <div>
+              <h4 className="uppercase ff-secondary letter-spacing-1">
+                est. travel time
+              </h4>
+              <h4 className="fs-6 ff-secondary uppercase">{travel}</h4>
+            </div>
           </div>
-          <div>
-            <p>est. travel time</p>
-            <h4>{travel}</h4>
-          </div>
-        </div>
+        </article>
       </div>
     </div>
   );

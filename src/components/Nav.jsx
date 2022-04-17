@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import navLogo from "../images/shared/logo.svg";
 export default function Nav(props) {
   const nav = document.getElementsByClassName("main-nav");
   const navBtn = document.getElementsByClassName("nav-toggle");
@@ -15,7 +14,7 @@ export default function Nav(props) {
       style={{ justifyContent: "space-between" }}
     >
       <div className="nav-logo">
-        <img src={navLogo} alt="nav logo" />
+        <img src={"images/shared/logo.svg"} alt="nav logo" />
       </div>
       <button
         className="nav-toggle"

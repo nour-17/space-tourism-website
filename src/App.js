@@ -23,7 +23,7 @@ const App = () => {
     fetch("./data.json")
       .then(res => res.json())
       .then(data => {
-        console.log(data.destinations[0]);
+        // console.log(data.destinations[0]);
         setDestinationData(
           data.destinations[
             destinationContent === "mars"
