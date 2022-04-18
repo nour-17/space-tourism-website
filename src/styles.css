@@ -506,6 +506,10 @@ ul > a{
 .destination h1{
   margin-top: 1rem;
 }
+.destination h2{
+  margin-left: 0rem;
+
+}
 .destination img{
   max-width: 200px;
   margin-inline: auto;
@@ -526,28 +530,7 @@ ul > a{
   margin-bottom: 2rem;
 }
 
-.home {
-  column-gap: var(--container-gap, 2rem);
-      grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 35.5rem)) minmax(1rem, 1fr);
-      text-align: left;
-  }
-  
-  .home > *:first-child {
-      grid-column: 2;
-  }
 
-  .home > *:last-child {
-      grid-column: 3;
-
-  }
-  .home-end{
-    padding-bottom: max(6rem, 15vh);
-        align-items: end;
-  }
-
-.large-home-text{
-  display: block;
-}
 
 
 /* media queries */
@@ -559,6 +542,7 @@ ul > a{
       --fs-4: .85rem;
       --fs-3: 1rem;
   }
+  
 }
 @media (min-width: 45em) {
   :root {
@@ -622,7 +606,36 @@ ul > a{
   .technology-bg{
     background-image: url("../public/images/technology/background-technology-desktop.jpg");
   }
-  
+  .destination{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: left; 
+  }
+  .destination > div {
+    padding-bottom: 2rem;
+  }
+  .destination h2{
+    margin-bottom: 5rem;
+    text-align: left;
+  }
+  .destination img{
+    max-width: 300px;
+  }
+  .destination p{
+    padding: 0rem 0 3rem;
+    margin-inline: auto;
+    max-width: 450px;
+    border-bottom: 2px solid hsl( var(--clr-white) / .25);
+  }
+  .destination .flex{
+    justify-content: left;
+  }
+  .destination .destination-last-section{
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
   .nav-line{
     display: block;
   }
@@ -633,7 +646,7 @@ ul > a{
     display: block;
   }
 }
-@media (min-width: 40rem) and (max-width: 49.5rem) {
+@media (min-width: 40rem) and (max-width: 49.438rem) {
   .main-nav li > span {
     display: none;
 }
@@ -647,4 +660,28 @@ nav{
 padding: 1.5rem 0 1.5rem 1.5rem ;
 
 }
+}
+@media (min-width:38rem) {
+  .home {
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 35.5rem)) minmax(1rem, 1fr);
+    text-align: left;
+    }
+    
+    .home > *:first-child {
+        grid-column: 2;
+    }
+  
+    .home > *:last-child {
+        grid-column: 3;
+  
+    }
+    .home-end{
+      padding-bottom: max(6rem, 15vh);
+          align-items: end;
+    }
+  
+  .large-home-text{
+    display: block;
+  }
 }
