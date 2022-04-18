@@ -67,13 +67,13 @@ export default function Destination({ props, destinationState }) {
           <p>{description}</p>
           <div className="flex destination-last-section">
             <div>
-              <h4 className="uppercase ff-secondary letter-spacing-1">
+              <h4 className="uppercase fs-4 ff-secondary letter-spacing-1">
                 avg Distance
               </h4>
               <h4 className="fs-6 ff-secondary uppercase">{distance}</h4>
             </div>
             <div>
-              <h4 className="uppercase ff-secondary letter-spacing-1">
+              <h4 className="uppercase fs-4 ff-secondary letter-spacing-1">
                 est. travel time
               </h4>
               <h4 className="fs-6 ff-secondary uppercase">{travel}</h4>

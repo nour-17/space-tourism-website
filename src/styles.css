@@ -523,6 +523,7 @@ ul > a{
 .destination-last-section{
   flex-direction: column;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .home {
@@ -553,10 +554,9 @@ ul > a{
 @media (min-width: 35em) {
   :root {
       --fs-7: 5rem;
-      --fs-6: 2.5rem;
+      --fs-6: 1.8rem;
       --fs-5: 1.5rem;
-  --fs-4: 1.25rem;
-
+      --fs-4: .85rem;
       --fs-3: 1rem;
   }
 }
@@ -564,9 +564,9 @@ ul > a{
   :root {
     /* font-sizes */
     --fs-7: 7rem;
-    --fs-6: 3.5rem;
-    --fs-5: 2rem;
-  --fs-4: 1.75rem;
+    --fs-6: 2.2rem;
+    --fs-5: 2.2rem;
+  --fs-4: 1rem;
 
     --fs-3: 1.125rem;
 }}
@@ -597,6 +597,16 @@ ul > a{
   .technology-bg{
     background-image: url("../public/images/technology/background-technology-tablet.jpg");
   }
+  .destination-last-section{
+    flex-direction: row;
+    margin-top: 2rem;
+  }
+  .destination img{
+    max-width: 300px;
+  }
+  .destination h2{
+    margin-top: 1rem;
+  }
 }
 
 @media (min-width: 49.5rem) {
@@ -612,12 +622,9 @@ ul > a{
   .technology-bg{
     background-image: url("../public/images/technology/background-technology-desktop.jpg");
   }
+  
   .nav-line{
     display: block;
-  }
-  nav{
-  padding: 1.5rem 0 1.5rem 1.5rem ;
-
   }
   nav > ul{
     width: 60%;
@@ -629,5 +636,15 @@ ul > a{
 @media (min-width: 40rem) and (max-width: 49.5rem) {
   .main-nav li > span {
     display: none;
+}
+  .destination h2{
+    text-align: left;
+    margin-left: 2rem;
+  }
+}
+@media(min-width:56rem){
+nav{
+padding: 1.5rem 0 1.5rem 1.5rem ;
+
 }
 }
