@@ -9,7 +9,7 @@ export default function Destination({ props, destinationState }) {
   return (
     <div className="destination">
       <div>
-        <h2 className="uppercase">
+        <h2 className="uppercase letter-spacing-2">
           <span
             className=""
             style={{

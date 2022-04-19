@@ -529,7 +529,50 @@ ul > a{
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+/* ----------------------------- */
+/* Layout                        */
+/* ----------------------------- */
+/* crew styling */
 
+
+.grid-container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding-inline: 1rem;
+}
+.grid-container--crew {
+  --flow-space: 2rem;
+  grid-template-areas: 
+      'title'
+      'image'
+      'tabs'
+      'content';
+}
+.grid-container--crew .crew-title{
+  grid-area: title;
+  margin: 1.5rem 0 3rem;
+}
+.grid-container--crew > img {
+  grid-area: image;
+  max-width: 55.5%;
+  align-self: end;
+  border-bottom: 1px solid hsl( var(--clr-light) / .5);
+
+}
+.role{
+  color: hsl( var(--clr-light) / .7);
+}
+.grid-container--crew > .dot-indicators {
+  grid-area: tabs;
+  margin: 2rem;
+}
+
+.grid-container--crew > .crew-info {
+  max-width: 550px;
+
+  grid-area: content;
+}
 
 
 
@@ -554,7 +597,6 @@ ul > a{
 
     --fs-3: 1.125rem;
 }}
-
 .home-bg {
   background-image: url("../public/images/home/background-home-mobile.jpg");
 }
@@ -586,13 +628,69 @@ ul > a{
     margin-top: 2rem;
   }
   .destination img{
-    max-width: 300px;
+    max-width: 230px;
   }
   .destination h2{
     margin-top: 1rem;
   }
 }
 
+
+
+@media (min-width: 40rem) and (max-width: 49.438rem) {
+  .main-nav li > span {
+    display: none;
+}
+  .destination h2{
+    text-align: left;
+    margin-left: 2rem;
+  }
+}
+@media(min-width:56rem){
+nav{
+padding: 1.5rem 0 1.5rem 1.5rem ;
+
+}
+}
+@media (min-width:38rem) {
+  .home {
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 35.5rem)) minmax(1rem, 1fr);
+    text-align: left;
+    }
+    
+    .home > *:first-child {
+        grid-column: 2;
+    }
+  
+    .home > *:last-child {
+        grid-column: 3;
+  
+    }
+    .home-end{
+      padding-bottom: max(6rem, 15vh);
+      align-items: end;
+    }
+  
+  .large-home-text{
+    display: block;
+  }
+  /* crew */
+  .crew-title{
+    justify-self: left;
+  }
+    .grid-container--crew {
+      grid-template-areas: 
+          'title'
+          'content'
+          'tabs'
+          'image';
+  }
+  .grid-container--crew > img {
+    /* max-width: 215px; */
+    max-height: 340px;
+  }
+}
 @media (min-width: 49.5rem) {
   .home-bg {
       background-image: url("../public/images/home/background-home-desktop.jpg");
@@ -606,6 +704,7 @@ ul > a{
   .technology-bg{
     background-image: url("../public/images/technology/background-technology-desktop.jpg");
   }
+  /* destination */
   .destination{
     display: flex;
     justify-content: space-evenly;
@@ -645,43 +744,49 @@ ul > a{
   .primary-nav::before{
     display: block;
   }
-}
-@media (min-width: 40rem) and (max-width: 49.438rem) {
-  .main-nav li > span {
-    display: none;
-}
-  .destination h2{
+  /* crew */
+  .grid-container{
     text-align: left;
-    margin-left: 2rem;
+  }
+  .grid-container--crew {
+    grid-template-areas: 
+        '. title title .'
+        '. content image .'
+        '. tabs image .';
+}  
+.grid-container--crew > *{
+  place-self: flex-start;
+  align-self: end;
+}
+.grid-container--crew > img {
+  /* max-width: 292px; */
+  max-width: 350px;
+  max-height: 400px;
+  place-self: flex-end;
+}
+.grid-container--crew > .dot-indicators{
+  padding-bottom: 3.5rem;
+}
+  .grid-container--crew p{
+    max-width: 430px;
   }
 }
-@media(min-width:56rem){
-nav{
-padding: 1.5rem 0 1.5rem 1.5rem ;
-
-}
-}
-@media (min-width:38rem) {
-  .home {
-    column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 35.5rem)) minmax(1rem, 1fr);
-    text-align: left;
-    }
-    
-    .home > *:first-child {
-        grid-column: 2;
-    }
+  @media (min-width: 55em) {
+    :root {
+      /* font-sizes */
+      --fs-7: 7rem;
+      --fs-6: 3rem;
+      --fs-5: 2.5rem;
+    --fs-4: 1.3rem;
   
-    .home > *:last-child {
-        grid-column: 3;
-  
-    }
-    .home-end{
-      padding-bottom: max(6rem, 15vh);
-          align-items: end;
-    }
-  
-  .large-home-text{
-    display: block;
+      --fs-3: 1.125rem;
   }
-}
+  .destination img {
+    max-width: 380px;
+    padding-bottom: 20px;
+  }}
+  @media (max-width:52rem) {
+    .destination h2{
+      font-size: 22px;
+    }
+  }

@@ -11,10 +11,15 @@ import Nav from "./components/Nav";
 
 const App = () => {
   const [destinationContent, setDestinationContent] = React.useState("moon");
+  const [crewContent, setCrewContent] = React.useState("Commander");
   const [destinationData, setDestinationData] = React.useState({});
+  const [crewData, setCrewData] = React.useState({})
   const [appBackground, setAppBackground] = React.useState("home");
   function destination(place) {
     setDestinationContent(place);
+  }
+  function crew(tap) {
+    setCrewData(tap)
   }
   function changeBackground(page) {
     setAppBackground(page);
@@ -35,8 +40,17 @@ const App = () => {
               : 0
           ]
         );
+        setCrewData(data.crew[
+          crewContent === "Mission Specialist"
+              ? 1
+              : crewContent === "Pilot"
+              ? 2
+              : crewContent === "Flight Engineer"
+              ? 3
+              : 0
+        ])
       });
-  }, [destinationContent]);
+  }, [destinationContent, crewData]);
   return (
     <div className={`app ${appBackground}-bg`}>
       <a className="skip-to-content text-dark" href="#">
@@ -56,7 +70,7 @@ const App = () => {
               />
             }
           />
-          <Route path="/crew" element={<Design />} />
+          <Route path="/crew" element={<Crew props={crewData} crewState={setCrewContent}/>} />
           <Route path="/technology" element={<Technology />} />
         </Routes>
       </BrowserRouter>
