@@ -12,15 +12,12 @@ import Nav from "./components/Nav";
 const App = () => {
   const [destinationContent, setDestinationContent] = React.useState("moon");
   const [crewContent, setCrewContent] = React.useState("Commander");
+  const [technologyContent, setTechnologyContent] = React.useState("Commander");
   const [destinationData, setDestinationData] = React.useState({});
   const [crewData, setCrewData] = React.useState({})
+  const [technologyData, setTechnologyData] = React.useState({})
   const [appBackground, setAppBackground] = React.useState("home");
-  function destination(place) {
-    setDestinationContent(place);
-  }
-  function crew(tap) {
-    setCrewData(tap)
-  }
+  
   function changeBackground(page) {
     setAppBackground(page);
   }
@@ -28,7 +25,7 @@ const App = () => {
     fetch("./data.json")
       .then(res => res.json())
       .then(data => {
-        // console.log(data.destinations[0]);
+        // console.log(data.technology);
         setDestinationData(
           data.destinations[
             destinationContent === "mars"
@@ -48,9 +45,16 @@ const App = () => {
               : crewContent === "Flight Engineer"
               ? 3
               : 0
+        ]);
+        setTechnologyData(data.technology[
+          technologyContent === "Spaceport"
+              ? 1
+              : technologyContent === "Space capsule"
+              ? 2
+              : 0
         ])
       });
-  }, [destinationContent, crewData]);
+  }, [destinationContent, crewContent, technologyContent]);
   return (
     <div className={`app ${appBackground}-bg`}>
       <a className="skip-to-content text-dark" href="#">
@@ -60,18 +64,18 @@ const App = () => {
       <BrowserRouter>
         <Nav handleBackground={changeBackground} />
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" exact element={<Home handleBackground={changeBackground} />} />
           <Route
             path="/destination"
             element={
               <Destination
                 props={destinationData}
-                destinationState={destination}
+                destinationState={setDestinationContent}
               />
             }
           />
           <Route path="/crew" element={<Crew props={crewData} crewState={setCrewContent}/>} />
-          <Route path="/technology" element={<Technology />} />
+          <Route path="/technology" element={<Technology props={technologyData} technologyState={setTechnologyContent} />} />
         </Routes>
       </BrowserRouter>
     </div>
