@@ -846,14 +846,101 @@ padding: 1.5rem 0 1.5rem 1.5rem ;
 }
 /* styling the technology desktop */
   @media (min-width:48em) {
-      .technology{
-        display: flex;
-        /* grid-template-areas: 
-        'title'
-        'image'
-        'content'; */
-      }
+    .app{
+      position: relative;
+
+    }
+    .technology{
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      align-self: center;
+      height: fit-content;
+      /* grid-template-areas: 
+      'title'
+      'image'
+      'content'; */
+    }
+    .technology h2{
+      top: 22%;
+      left: 7.5%;
+      position: absolute;
+    }
+    .tech-title{
+      font-size: var(--fs-5);
+    }
+    .tech-img{
+      align-self: center;
+      height: 450px;
+    }
+    .tech-header{
+      font-size: var(--fs-4);
+    }
+    .technology-content{
+      display: flex;
+      align-self: center;
+      margin-inline: 5rem;
+    }
     .tech-description{
       /* color: red; */
+      padding: 0%;
+      max-width: 450px;
+      font-size: var(--fs-4);
+    }
+    .num-indicators >*{
+     width: 70px;
+    }
+    .technology .num-indicators{
+    --gap:1rem;
+      margin:0;
+    }
+    .num-indicators button{
+      align-self: center;
+    }
+    .tech-header{
+      margin-top: 0%;
+    }
+    .technology  .num-indicators{
+      display: grid;
+      margin-inline: 2rem;
+      /* margin: 1rem auto 1.5rem;
+      justify-content: center; */
     }
   }
+  /* tech nology modifications */
+@media (max-width:68em) {
+  .tech-img{
+    height: 350px;
+  }
+  .tech-description{
+    font-size: 1.1rem;
+  }
+  .technology h2{
+    top: 22%;
+    left: 11%;
+  }
+  .tech-title{
+    font-size: 1.7rem;
+  }
+}
+@media (max-width:54em) {
+  .tech-img{
+    height: 300px;
+  }
+  .tech-description{
+    font-size: 1.1rem;
+  }
+  .technology h2{
+    top: 22%;
+    left: 11%;
+  }
+  .tech-title{
+    font-size: 1.7rem;
+  }
+  .num-indicators >*{
+    width: 60px;
+   }
+   .tech-title {
+    font-size: 1.35rem;
+}
+}

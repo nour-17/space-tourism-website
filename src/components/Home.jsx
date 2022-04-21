@@ -6,10 +6,10 @@ export default function Home(props) {
   const nav = document.getElementsByClassName("main-nav");
   const navBtn = document.getElementsByClassName("nav-toggle");
 
-  function toggleNav() {
-    nav[0].classList.toggle("nav-open");
-    navBtn[0].classList.toggle("nav-open");
-  }
+  // function toggleNav() {
+  //   nav[0].classList.toggle("nav-open");
+  //   navBtn[0].classList.toggle("nav-open");
+  // }
   return (
     <div className="home home-end">
       <div className="home-description">
@@ -35,7 +35,6 @@ export default function Home(props) {
           />    */}
         <Link
           onClick={() => {
-            toggleNav();
             props.handleBackground("destination");
           }}
           className="main-btn uppercase fw-regular text-dark bg-white ff-secondary"
