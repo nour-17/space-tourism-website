@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// components
 
+// components
 import Design from "./components/Design";
 import Crew from "./components/Crew";
 import Destination from "./components/Destination";
@@ -17,7 +17,15 @@ const App = () => {
   const [crewData, setCrewData] = React.useState({})
   const [technologyData, setTechnologyData] = React.useState({})
   const [appBackground, setAppBackground] = React.useState("home");
-  
+
+
+  React.useEffect(()=>{
+    const bgData = window.localStorage.getItem("background")
+    setAppBackground(JSON.parse(bgData))
+  },[])
+  React.useEffect(()=>{
+    window.localStorage.setItem("background",JSON.stringify(appBackground))
+  },[appBackground])
   function changeBackground(page) {
     setAppBackground(page);
   }
@@ -56,7 +64,8 @@ const App = () => {
       });
   }, [destinationContent, crewContent, technologyContent]);
   return (
-    <div className={`app ${appBackground}-bg`}>
+  
+      <div className={`app ${appBackground}-bg`}>
       <a className="skip-to-content text-dark" href="#">
         Skip to content
       </a>

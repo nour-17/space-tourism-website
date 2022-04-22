@@ -2,6 +2,14 @@ import React from "react";
 export default function Crew({ props, crewState }) {
   const { bio, images, name, role } = props;
   const [baseImg, setBaseImg] = React.useState("./");
+  const tabs = document.getElementsByClassName("crew-tabs");
+  function changeTab(n) {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove("activee");
+      tabs[i].setAttribute("aria-selected", "false");
+    }
+    tabs[n].setAttribute("aria-selected", "true");
+  }
   React.useEffect(() => {
     images && setBaseImg(images.png);
   }, [images]);
@@ -23,7 +31,9 @@ export default function Crew({ props, crewState }) {
           aria-selected="true"
           onClick={() => {
             crewState("Commander");
+            changeTab(0);
           }}
+          className={"crew-tabs"}
         >
           <span className="sr-only">commander</span>
         </button>
@@ -31,7 +41,9 @@ export default function Crew({ props, crewState }) {
           aria-selected="false"
           onClick={() => {
             crewState("Mission Specialist");
+            changeTab(1);
           }}
+          className={"crew-tabs"}
         >
           <span className="sr-only">the mission specialist</span>
         </button>
@@ -39,7 +51,9 @@ export default function Crew({ props, crewState }) {
           aria-selected="false"
           onClick={() => {
             crewState("Pilot");
+            changeTab(2);
           }}
+          className={"crew-tabs"}
         >
           <span className="sr-only">the pilot</span>
         </button>
@@ -47,7 +61,9 @@ export default function Crew({ props, crewState }) {
           aria-selected="false"
           onClick={() => {
             crewState("Flight Engineer");
+            changeTab(3);
           }}
+          className={"crew-tabs"}
         >
           <span className="sr-only">the engineer</span>
         </button>

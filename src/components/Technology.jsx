@@ -2,13 +2,24 @@ import React from "react";
 export default function Technology({ props, technologyState }) {
   const { description, images, name } = props;
   const [baseImg, setBaseImg] = React.useState("./");
-  // var width = window.innerWidth > 0 ? window.innerWidth : window.screen.width;
-  // setInterval(() => {
-  //   console.log(width);
-  // }, 500);
+  const tabs = document.getElementsByClassName("tech-tabs");
+  const [size, setSize] = React.useState(window.innerWidth);
+  function changeTab(n) {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove("activee");
+      tabs[i].setAttribute("aria-selected", "false");
+    }
+    tabs[n].setAttribute("aria-selected", "true");
+  }
   React.useEffect(() => {
-    images && setBaseImg(images.portrait);
-  }, [images]);
+    window.addEventListener("resize", () => {
+      setSize(window.innerWidth);
+    });
+  }, []);
+  React.useEffect(() => {
+    images &&
+      setBaseImg(window.innerWidth > 770 ? images.portrait : images.landscape);
+  }, [images, size]);
   return (
     <div className="technology">
       <h2
@@ -33,24 +44,30 @@ export default function Technology({ props, technologyState }) {
           <button
             aria-selected="true"
             onClick={() => {
+              changeTab(0);
               technologyState("Launch vehicle");
             }}
+            className={"tech-tabs"}
           >
             <span>1</span>
           </button>
           <button
             aria-selected="false"
             onClick={() => {
+              changeTab(1);
               technologyState("Spaceport");
             }}
+            className={"tech-tabs"}
           >
             <span>2</span>
           </button>
           <button
             aria-selected="false"
             onClick={() => {
+              changeTab(2);
               technologyState("Space capsule");
             }}
+            className={"tech-tabs"}
           >
             <span>3</span>
           </button>

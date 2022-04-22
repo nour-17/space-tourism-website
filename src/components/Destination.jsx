@@ -3,6 +3,14 @@ import React from "react";
 export default function Destination({ props, destinationState }) {
   const { name, images, description, distance, travel } = props;
   const [baseImg, setBaseImg] = React.useState("./");
+  const links = document.getElementsByClassName("destination-btns");
+  function changetab(num) {
+    for (let i = 0; i < links.length; i++) {
+      links[i].classList.remove("active");
+      links[i].setAttribute("aria-selected", "false");
+    }
+    links[num].classList.add("active");
+  }
   React.useEffect(() => {
     images && setBaseImg(images.png);
   }, [images]);
@@ -28,36 +36,40 @@ export default function Destination({ props, destinationState }) {
           <button
             onClick={() => {
               destinationState("moon");
+              changetab(1);
             }}
             aria-selected="true"
-            className="uppercase text-accent bg-transparent ff-main letter-spacing-2"
+            className="destination-btns uppercase text-accent bg-transparent ff-main letter-spacing-2"
           >
             Moon
           </button>
           <button
             onClick={() => {
               destinationState("mars");
+              changetab(1);
             }}
-            aria-selected="false"
-            className="uppercase text-accent bg-transparent ff-main letter-spacing-2"
+            // aria-selected="false"
+            className="destination-btns uppercase text-accent bg-transparent ff-main letter-spacing-2"
           >
             Mars
           </button>
           <button
             onClick={() => {
               destinationState("europa");
+              changetab(2);
             }}
-            aria-selected="false"
-            className="uppercase text-accent bg-transparent ff-main letter-spacing-2"
+            // aria-selected="false"
+            className="destination-btns uppercase text-accent bg-transparent ff-main letter-spacing-2"
           >
             Europa
           </button>
           <button
             onClick={() => {
               destinationState("titan");
+              changetab(3);
             }}
-            aria-selected="false"
-            className="uppercase text-accent bg-transparent ff-main letter-spacing-2"
+            // aria-selected="false"
+            className="destination-btns uppercase text-accent bg-transparent ff-main letter-spacing-2"
           >
             titan
           </button>

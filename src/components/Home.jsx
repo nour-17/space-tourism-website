@@ -1,15 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Destination from "./Destination";
 
 export default function Home(props) {
   const nav = document.getElementsByClassName("main-nav");
   const navBtn = document.getElementsByClassName("nav-toggle");
 
-  // function toggleNav() {
-  //   nav[0].classList.toggle("nav-open");
-  //   navBtn[0].classList.toggle("nav-open");
-  // }
   return (
     <div className="home home-end">
       <div className="home-description">
@@ -27,12 +22,6 @@ export default function Home(props) {
         </p>
       </div>
       <div className="home-btn">
-        {/* <Route
-            path="/destination"
-            element={
-              <Destination />
-            }
-          />    */}
         <Link
           onClick={() => {
             props.handleBackground("destination");
@@ -42,12 +31,6 @@ export default function Home(props) {
         >
           explore
         </Link>
-        {/* <a
-          href="#"
-          className="main-btn uppercase fw-regular text-dark bg-white ff-secondary"
-        >
-          
-        </a> */}
       </div>
     </div>
   );
