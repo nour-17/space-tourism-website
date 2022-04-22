@@ -3,8 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### `project description`
-this project is a space tourism site that shows a trip to outer space details built with react.js
-this project uses the local storage 
+this project is a space tourism site that shows a trip to outer space details built with react.js 
 
 ## Available Scripts
 
